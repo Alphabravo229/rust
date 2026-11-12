@@ -18,6 +18,8 @@ fn main() {
                 println!("Enter the website to search, assumed https://");
                 let mut website = String::new();
                 website.push_str("https://");
+                print!("> ");
+                io::stdout().flush().unwrap();
                 io::stdin().read_line(&mut website).expect("error");
                 Command::new("zen-twilight").arg(website).spawn().expect("Failed to open");
                 break;
