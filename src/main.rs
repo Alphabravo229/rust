@@ -28,4 +28,5 @@ fn main() {
             _ => {println!("Unknown command"); continue;}
         }
     }
+    let _ = Command::new("pkill").arg("foot").spawn();
 }
