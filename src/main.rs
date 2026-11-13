@@ -14,6 +14,16 @@ fn main() {
                 Command::new("zen-twilight").arg("https://web.spaggiari.eu/home/app/default/login.php").spawn().expect("Failed to open");
                 break;
             }
+            "search" => {
+                println!("Enter your search query:");
+                let mut query = String::new();
+                query.push_str("https://searxng.tail3da965.ts.net/search?q=");
+                print!("> ");
+                io::stdout().flush().unwrap();
+                io::stdin().read_line(&mut query).expect("error");
+                Command::new("zen-twilight").arg(query); 
+                break;
+            }
             "custom" => {
                 println!("Enter the website to search, assumed https://");
                 let mut website = String::new();
