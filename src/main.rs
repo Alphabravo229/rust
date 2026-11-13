@@ -24,6 +24,7 @@ fn main() {
                 Command::new("zen-twilight").arg(query); 
                 break;
             }
+            "gh" => {Command::new("zen-twilight").arg("https://github.com").spawn().expect("error"); break;}
             "custom" => {
                 println!("Enter the website to search, assumed https://");
                 let mut website = String::new();
